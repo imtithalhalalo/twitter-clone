@@ -453,6 +453,26 @@ select {
   margin-left: 4px;
 }
 /* End Portfolio Page */
+
+/* Start Portfolio Page */
+.bar {
+  display: flex;
+  align-items: center;
+  padding-top: 8px;
+  height: 50px;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 0 10px;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+}
+.bar img {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 /* Media Query */
 @media only screen and (max-width: 1260px) {
   .popup {
