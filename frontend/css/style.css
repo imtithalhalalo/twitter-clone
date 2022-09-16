@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: "Poppins", sans-serif;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+}
+/* Poster and logo */
+.poster {
+  width: 50%;
+}
+.center-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.image-back {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  object-fit: cover;
+  padding: 150px 0;
+}
+.twitter-image {
+  background-image: url("/images/background.png");
+}
+/* Twitter Join */
+.twitter-join {
+  margin: 0 16px;
+  padding: 24px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.entry i {
+  color: #1da1f2;
+}
+.entry h1 {
+  margin-top: 45px;
+  font-size: 74px;
+  margin-left: 5px;
+}
+.entry h2 {
+  font-size: 32px;
+  margin-left: 5px;
+}
+
+.btn {
+  width: 70%;
+  height: 2.5rem;
+  border-radius: 50px;
+  font-weight: bolder;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+}
+.blue-btn {
+  border: 0;
+  background-color: #1da1f2;
+  color: #fff;
+}
+.white-btn {
+  border: 1px solid #cbcbcb;
+  background-color: #fff;
+  color: #1da1f2;
+}
+.blue-btn:hover {
+  background-color: #0065a4e6;
+  transition: 0.15s ease-in-out;
+}
+.white-btn:hover {
+  background-color: #50b8f842;
+  transition: 0.15s ease-in-out;
+}
+.entry p {
+  font-size: 14px;
+  padding-left: 10px;
+  color: #878787;
+}
