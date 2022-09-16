@@ -13,6 +13,21 @@ html {
   flex-direction: row;
 }
 /* Utilities */
+.pt-1 {
+  padding-top: 12px;
+}
+.mt-1 {
+  margin-top: 1rem;
+}
+.color-blue {
+  color: #1da1f2;
+}
+.color-grey {
+  color: #878787;
+}
+.mb-1 {
+  margin-bottom: 1rem;
+}
 a {
   text-decoration: none;
   color: #000;
