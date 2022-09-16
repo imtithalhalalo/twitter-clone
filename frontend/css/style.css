@@ -478,6 +478,45 @@ select {
     padding-left: 100px;
     padding-right: 110px;
   }
+  /* Feed Page */
+  .header {
+    width: 10%;
+    padding: 10px 5px;
+  }
+
+  .main {
+    margin-left: 10%;
+    width: 90%;
+  }
+  .header span {
+    display: none;
+  }
+
+  .header .tweet-button {
+    width: 40px;
+    border-radius: 50%;
+    font-size: 0.6rem;
+  }
+
+  .header .main-account {
+    display: flex;
+    justify-content: center;
+  }
+
+  .header .main-account i {
+    display: none;
+  }
+
+  .nav-links a {
+    display: flex;
+    align-items: center;
+    padding: 4px 4px 4px 4px;
+    font-size: 15px;
+    width: fit-content;
+  }
+  .nav-links a i {
+    margin-right: 0;
+  }
 }
 
 @media only screen and (max-width: 800px) {
