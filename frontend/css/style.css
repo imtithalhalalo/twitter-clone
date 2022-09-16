@@ -517,6 +517,16 @@ select {
   .nav-links a i {
     margin-right: 0;
   }
+  .tweets-feed {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+  }
+  .search-feed {
+    display: none;
+    width: 0;
+    padding: 0;
+  }
 }
 
 @media only screen and (max-width: 800px) {
