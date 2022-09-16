@@ -12,6 +12,31 @@ html {
   display: flex;
   flex-direction: row;
 }
+/* Utilities */
+a {
+  text-decoration: none;
+  color: #000;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0px 0 10px 11%;
+  width: 29%;
+  height: 100%;
+  position: fixed;
+}
+
+/* margin left to start after the fixed header */
+.main {
+  width: 71%;
+  height: 100%;
+  margin-left: 29%;
+}
 /* Poster and logo */
 .poster {
   width: 50%;
@@ -177,3 +202,82 @@ select {
   flex-basis: 30%;
 }
 /* Gender Section Ends */
+
+/* Start Header Nav */
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 35%;
+  justify-content: space-between;
+}
+.nav-links a {
+  display: flex;
+  align-items: center;
+  padding: 8px 25px 8px 8px;
+  font-size: 15px;
+  width: fit-content;
+}
+.nav-links a i {
+  margin-right: 15px;
+  font-size: 1.5rem;
+}
+.nav-links a:hover {
+  background-color: #e7e7e8;
+  border-radius: 50px;
+}
+.nav-links a:hover:first-child {
+  padding: 8px 8px;
+  background-color: #e8f5fd;
+}
+.nav-links a:first-child i {
+  margin: 0;
+}
+.tweet-button {
+  background-color: #1da1f2;
+  width: 90%;
+  height: 40px;
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  transition: 0.3s;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 15px;
+  font-size: 1rem;
+}
+.tweet-button:hover {
+  background-color: #1a8cd8;
+}
+.main-account {
+  width: 100%;
+  height: 65%;
+  padding-top: 300px;
+}
+.account-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px 8px 15px;
+  margin-right: 10px;
+}
+.profile-img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #e7e7e8;
+}
+.account {
+  display: flex;
+  flex-direction: column;
+  line-height: 20px;
+  flex-basis: 80%;
+  font-size: 12px;
+}
+.account-name {
+  font-weight: 600;
+}
+.account-username {
+  color: #797979;
+}
+/* End Header Nav */
