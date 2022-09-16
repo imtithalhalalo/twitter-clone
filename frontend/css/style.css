@@ -332,3 +332,60 @@ select {
 .search i {
   color: #797979;
 }
+.new-tweet {
+  display: flex;
+  width: 100%;
+  height: 120px;
+  padding: 4px 10px;
+}
+.image-upload > input {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+.image-upload img {
+  cursor: pointer;
+}
+.new-tweet .profile-img {
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+}
+.new-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-top: 4px;
+  width: 100%;
+  margin-left: 12px;
+}
+.new-details input {
+  width: 100%;
+  height: 26px;
+  background-color: #fff;
+  font-size: 16px;
+  border: none;
+  color: #797979;
+  outline: none;
+}
+.image-upload {
+  display: flex;
+}
+.tweet-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  width: 100%;
+}
+.tweet-action .tweet-button {
+  width: 75px;
+  height: 35px;
+  margin: 0;
+  font-weight: 400;
+  font-size: 14px;
+  background-color: #8ecdf8;
+}
+.tweet-action .tweet-button .clicked {
+  background-color: #1da1f2;
+}
