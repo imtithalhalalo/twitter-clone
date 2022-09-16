@@ -85,3 +85,30 @@ html {
   padding-left: 10px;
   color: #878787;
 }
+/* Pop Up */
+.popup {
+  transition: top 0.25s ease;
+  position: absolute;
+  top: 1%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  margin: auto;
+  overflow: auto;
+  background: #fff;
+  border-radius: 15px;
+  padding: 1em 2em;
+  height: 100%;
+  box-shadow: 2px 2px 25px 2px rgba(0, 0, 0, 0.434);
+  visibility: hidden;
+}
+.signup-popup {
+  padding: 10px 50px;
+}
+.open-popup {
+  visibility: visible;
+}
+.center {
+  text-align: center;
+}
