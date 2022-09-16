@@ -452,3 +452,46 @@ select {
   font-weight: normal;
   margin-left: 4px;
 }
+/* End Portfolio Page */
+/* Media Query */
+@media only screen and (max-width: 1260px) {
+  .popup {
+    max-width: 70%;
+    top: 0;
+    width: 70%;
+    padding: 0.9em;
+  }
+  .container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .poster {
+    width: 100%;
+  }
+  .twitter-join {
+    width: 90%;
+  }
+  .image-back {
+    padding: 50px 0;
+  }
+  .btn-black {
+    padding-left: 100px;
+    padding-right: 110px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .popup {
+    max-width: 100%;
+    top: 0;
+    width: 100%;
+  }
+  .signup-popup {
+    padding-top: 3px;
+    padding: 24px;
+  }
+  .signin-popup {
+    padding-top: 3px;
+    padding: 24px;
+  }
+}
