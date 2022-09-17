@@ -2,12 +2,12 @@
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE');
 header('Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorization, X-Request-With');
-
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 include("connection/connection.php");
 $user_id =$_POST["user_id"];
-$user=$_POST["user"];
-$query = $mysqli->prepare("SELECT * FROM follows WHERE following_id=? OR follower_id=?");
-$query->bind_param('ii',$user_id,$user);
+$query = $mysqli->prepare("SELECT * FROM tweets,users,follows WHERE tweets.user_id=follows.following_id AND users.id=tweets.user_id AND follows.follower_id=?");
+$query->bind_param('i',$user_id);
 $query->execute();
 $array = $query->get_result();
 
@@ -15,5 +15,5 @@ $response = [];
     while($a=$array->fetch_assoc()){
         $response[]=$a;
     }
-
+echo json_encode($response);
 ?>
