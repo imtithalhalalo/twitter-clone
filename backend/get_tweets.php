@@ -15,11 +15,13 @@ $array = $query->get_result();
 $num_rows = $array->num_rows;
 
 $response = [];
-    while($a=$array->fetch_assoc()){
-        $response[]=$a;
-    }
+if($num_rows > 0){
+    $response["success"] = true;
 
+}else{
+    $response["success"] = false;
     
+}
 echo json_encode($response);
 
 ?>

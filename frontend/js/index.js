@@ -91,17 +91,12 @@ const signUp = (e) => {
 createBtn.addEventListener("click", signUp);
 
 
-
-const store = () => {
-    localStorage.setItem('email', email.value)
-}
 //login 
 const loginBtn = document.getElementById("login-btn");
 const loginEmail = document.getElementById("login-email");
 const loginPassword = document.getElementById("login-password");
 function login(e) {
     e.preventDefault();
-
     let formData = new FormData();
     formData.append("email", loginEmail.value);
     formData.append("password", loginPassword.value);
@@ -112,11 +107,13 @@ function login(e) {
         return response.json();
     }).then(function (data) {
         console.log(data)
-        if (data['success'] == true) {
-            store();
+        if (data.length>0) {
+           
             location.href = "./feed.html"
+            localStorage.setItem('user_id',data[0].id);
+            
         }
-        else alert("login error")
+        else alert("Incorrect email and password")
     });
 }
 loginBtn.addEventListener("click", login)
