@@ -433,7 +433,9 @@ select {
   font-weight: 700;
   font-size: 14px;
 }
-
+.popup-search {
+  width: 400px;
+}
 .user-details span {
   color: #797979;
   font-weight: 400;
