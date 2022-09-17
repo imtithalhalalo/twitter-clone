@@ -108,7 +108,6 @@ function login(e) {
     }).then(function (data) {
         console.log(data)
         if (data.length>0) {
-           
             location.href = "./feed.html"
             localStorage.setItem('user_id',data[0].id);
             

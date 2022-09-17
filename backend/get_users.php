@@ -16,8 +16,7 @@ $response = [];
     while($a=$array->fetch_assoc()){
         $response[]=$a;
     }
-
-    
+   
 echo json_encode($response);
 
 ?>
