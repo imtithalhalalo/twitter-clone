@@ -2,6 +2,8 @@
 //const username=document.getElementById("account-username");
 followDiv=document.querySelector(".who-to-follow");
 //followProfile=document.querySelector(".follow-profile");
+let button;
+
 const getUsers=(e)=>{
     e.preventDefault();
     let formData = new FormData();
@@ -34,15 +36,31 @@ const getUsers=(e)=>{
             usernameSpan.classList.add("account-username");
             accountDiv.appendChild(nameSpan);
             accountDiv.appendChild(usernameSpan);
-            const button=document.createElement("button");
+            button=document.createElement("button");
             button.innerText="Follow";
             button.classList.add("tweet-button");
             followProfile.appendChild(button);
-        
+            button.addEventListener("click", addFollow=()=>{
+                
+                let formData = new FormData();
+                formData.append("follower_id",localStorage.getItem('user_id'));
+                formData.append("following_id", user.id);
+                fetch(`http://localhost/twitter-clone/backend/add_follow.php `, {
+                    method: 'POST',
+                    body: formData
+                }).then(function (response) {
+                    return response.json();
+                }).then(function (data) {
+                    if (data['success'] == true) {
+                      button.innerText="Following";
+                      button.classList.remove("tweet-button");
+                      button.classList.add("edit-button");
+                    }
+                    else alert("Error")
+                });
 
-
-
-
+               
+            });
 
             console.log(image)
             console.log(followDiv)
