@@ -4,7 +4,7 @@ const getTweetsByUser = (e) => {
     e.preventDefault();
     let formData = new FormData();
     formData.append("user_id", localStorage.getItem('user_id'));
-    fetch(`http://localhost/twitter-clone/backend/get_profile_tweets.php`, {
+    fetch(`http://localhost/twitter-clone/backend/get_tweets.php`, {
         method: 'POST',
         body: formData
     }).then(function (response) {
