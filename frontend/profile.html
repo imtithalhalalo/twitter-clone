@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="../frontend/css/style.css" />
+    <title>Home / Twitter</title>
+  </head>
+  <body>
+    <!-- Start Navigation Bar Column -->
+    <section class="header">
+      <div class="nav-links">
+        <a href="">
+          <i class="fa fa-twitter fa-3x color-blue"></i>
+        </a>
+        <a href="">
+          <i class="fa fa-home fa-2x"></i>
+          <span>Home</span>
+        </a>
+        <a href="">
+          <i class="fa fa-user fa-2x"></i>
+          <span>Profile</span>
+        </a>
+
+        <button class="tweet-button">Tweet</button>
+      </div>
+      <div class="main-account">
+        <div class="account-details">
+          <img
+            class="profile-img"
+            src="../frontend/images/profile.png"
+            alt=""
+          />
+          <div class="account">
+            <span class="account-name">Imtithal Halalo</span>
+            <span class="account-username">@halalo_i</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Navigation Bar Column -->
+
+    <!-- Start Main Part -->
+    <section class="main">
+      <div class="flex">
+        <div class="tweets-feed">
+          <div class="bar">
+            <img
+              src="../frontend/images/left-arrow.png"
+              alt=""
+              width="18px"
+              height="18px"
+            />
+            <span>Imtithal Halalo</span>
+          </div>
+          <div class="cover-photo">
+            <img src="" alt="" width="100%" height="150px" />
+          </div>
+
+          <div class="profile-photo">
+            <img
+              src="../frontend/images/profile.png"
+              alt=""
+              class="profile-img"
+            />
+            <button class="edit-button" id="open-edit-popup">
+              Edit Profile
+            </button>
+          </div>
+
+          <div class="user-info">
+            <div class="account">
+              <div class="account-name">Imtithal Halalo</div>
+              <div class="account-username">@halalo_i</div>
+            </div>
+            <div class="date-created">
+              <img
+                src="../frontend/images/calendar.png"
+                alt=""
+                width="18px"
+                height="18px"
+              />
+              <div class="date-joined">
+                Joined <span class="date">September 2022</span>
+              </div>
+            </div>
+
+            <div class="follow-details">
+              <div class="following">
+                <span class="number">0</span>
+                <span>Following</span>
+              </div>
+
+              <div class="follower">
+                <span class="number">0</span>
+                <span>Followers</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tweets">
+            <a href="">
+              <span>Tweets</span>
+            </a>
+          </div>
+          <div class="tweet">
+            <img class="profile-img" src="../frontend/images/profile.png" alt="" />
+            <div class="tweet-details">
+              <div class="user-details">
+                <div class="user">
+                  <a href="" class="fullname"
+                    >Imtithal Halalo
+                    <span class="username">@halalo_i</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="tweet-txt">
+                <p>
+                  Select your favorite social network and share our icons with
+                  your contacts or friends, if you do not have these social
+                  networks copy the link and paste it in the one you use.
+                </p>
+              </div>
+
+              <div class="tweet-fav">
+                <i class="material-icons-outlined"> favorite_border </i>
+                <span>78</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="search-feed">
+          <div class="search">
+            <i class="fa fa-search"></i>
+            <input type="text" placeholder="Search Twitter" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Main Part -->
+
+    <!-- PopUp Edit -->
+    <div class="popup popup-edit" id="pop-edit-profile">
+      <div class="flex">
+        <div class="edit-profile">
+          <div class="home-bar">
+            <div class="user-back">
+              <button id="close-edit-profile" class="close-btn">
+                <i class="fa fa-times fa-2x" aria-hidden="true"></i>
+              </button>
+              <span>Edit Profile</span>
+            </div>
+            <button class="tweet-button" id="save">Save</button>
+          </div>
+
+          <div class="cover-photo">
+            <div class="image-upload">
+              <label for="file-input">
+                <img
+                  src="../frontend/images/add-photo.png"
+                  alt=""
+                  width="28px"
+                  height="28px"
+                />
+              </label>
+              <input id="file-input" type="file" />
+            </div>
+          </div>
+          <div class="profile-photo">
+            <div class="profile-img">
+              <div class="image-upload">
+                <label for="file-input">
+                  <img
+                    src="../frontend/images/add-photo.png"
+                    alt=""
+                    width="28px"
+                    height="28px"
+                  />
+                </label>
+                <input id="file-input" type="file" />
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-1 mb-1">
+            <input class="input" type="text" placeholder="Name" />
+          </div>
+          <h4>Date of birth</h4>
+          <p class="color-grey">
+            <small>
+              This will not be shown publicly. Confirm your own age, even if
+              this account is for a business, a pet, or something else.
+            </small>
+          </p>
+          <div class="group mt-1">
+            <div class="basis-48">
+              <select class="input" id="month_box"></select>
+            </div>
+            <div class="basis-18">
+              <select class="input" id="days_box"></select>
+            </div>
+            <div class="basis-28">
+              <select class="input" id="years_box"></select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../frontend/js/profile.js"></script>
+  </body>
+</html>

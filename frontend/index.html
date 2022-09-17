@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Twitter.It,s what,s happining/twitter</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="../frontend/css/style.css" />
+  </head>
+  <body>
+    <!-- Start Main Section -->
+    <section class="container" id="con">
+      <div class="poster image-back twitter-image">
+        <img
+          src="../frontend/images/twitter-logo.png"
+          alt=""
+          width="50%"
+          class="center-img"
+        />
+      </div>
+      <div class="twitter-join">
+        <div class="entry">
+          <i class="fa fa-twitter fa-3x color-blue"></i>
+          <h1 class="pt-1">Happening now</h1>
+          <h2 class="pt-1">Join Twitter today.</h2>
+          <button class="btn mt-1 blue-btn" id="open-sign-up">Sign Up</button>
+          <p>
+            <small
+              >By signing up, you agree to the
+              <span class="color-blue">Terms of Service</span> and
+              <span class="color-blue">Privacy Policy</span>, <br />including
+              <span class="color-blue">Cookie Use.</span></small
+            >
+          </p>
+          <h4 class="pt-1">Already have an account?</h4>
+          <button class="btn mt-1 white-btn" id="open-sign-in">Sign In</button>
+        </div>
+      </div>
+    </section>
+    <!-- End Main Section -->
+
+    <!-- Start Sign Up Pop Up Section -->
+    <section class="popup" id="pop-sign-up">
+      <button class="close-btn" id="close-sign-up">
+        <i class="fa fa-times fa-2x" aria-hidden="true"></i>
+      </button>
+
+      <div class="signup-popup">
+        <h2>Create your account</h2>
+        <h3 id="success"></h3>
+        <!-- Form Sign Up -->
+        <form action="" class="form">
+          <div class="inputs mb-1">
+            <div class="mt-1">
+              <input class="input" type="text" id="name" placeholder="Name" />
+            </div>
+            <div class="mt-1">
+              <input
+                class="input"
+                type="text"
+                id="password"
+                placeholder="Password"
+              />
+            </div>
+            <div class="mt-1">
+              <input
+                class="input"
+                type="email"
+                id="email"
+                placeholder="Email"
+              />
+            </div>
+          </div>
+
+          <h4>Date of birth</h4>
+          <p class="color-grey">
+            <small>
+              This will not be shown publicly. Confirm your own age, even if
+              this account is for a business, a pet, or something else.
+            </small>
+          </p>
+          <div class="group mt-1">
+            <div class="basis-48">
+              <select class="input" id="month_box" required></select>
+            </div>
+            <div class="basis-18">
+              <select class="input" id="days_box" required></select>
+            </div>
+            <div class="basis-28">
+              <select class="input" id="years_box" required></select>
+            </div>
+          </div>
+
+          <!-- Start Gender Section -->
+
+          <h4>Choose Your Gender</h4>
+          <div class="group mt-1">
+            <div class="female input base-30">
+              <input
+                type="radio"
+                name="gender"
+                value="female"
+                id="female"
+                required
+              />
+              <label for="female"><b>Female</b></label>
+            </div>
+            <div class="male input base-30">
+              <input
+                type="radio"
+                name="gender"
+                value="male"
+                id="male"
+                required
+              />
+              <label for="male"><b>Male</b></label>
+            </div>
+            <div class="other input base-30">
+              <input
+                type="radio"
+                name="gender"
+                value="other"
+                id="other"
+                required
+              />
+              <label for="other"><b>Custom</b></label>
+            </div>
+          </div>
+
+          <!-- End Gender Section -->
+          <button id="close" class="btn-black">Create</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- End Sign Up Pop Up Section -->
+
+    <!-- Start Sign In Pop Up Section -->
+    <section class="popup" id="pop-sign-in">
+      <button class="close-btn" id="close-sign-in">
+        <i class="fa fa-times fa-2x" aria-hidden="true"></i>
+      </button>
+      <div class="error"></div>
+      <div class="signin-popup">
+        <div class="center">
+          <i class="fa fa-twitter fa-3x color-blue"></i>
+          <h2>Sign in to Twitter</h2>
+        </div>
+
+        <!-- Form Sign In -->
+        <form action="" id="form">
+          <div class="inputs">
+            <div class="mt-1 mb-1">
+              <input
+                class="input"
+                type="text"
+                id="login-email"
+                placeholder="Email"
+              />
+            </div>
+            <div class="mt-1 mb-1">
+              <input
+                class="input"
+                type="text"
+                id="login-password"
+                placeholder="Password"
+              />
+            </div>
+          </div>
+          <button id="login-btn" class="btn-black">Log in</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- End Sign Up Pop Up Section -->
+  </body>
+  <script src="./js/index.js"></script>
+  <script src="../frontend/js/date_of_birth.js"></script>
+</html>
