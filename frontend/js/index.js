@@ -89,3 +89,34 @@ const signUp = (e) => {
     
 }
 createBtn.addEventListener("click", signUp);
+
+
+
+const store = () => {
+    localStorage.setItem('email', email.value)
+}
+//login 
+const loginBtn = document.getElementById("login-btn");
+const loginEmail = document.getElementById("login-email");
+const loginPassword = document.getElementById("login-password");
+function login(e) {
+    e.preventDefault();
+
+    let formData = new FormData();
+    formData.append("email", loginEmail.value);
+    formData.append("password", loginPassword.value);
+    fetch(`http://localhost/twitter-clone/backend/login.php`, {
+        method: 'POST',
+        body: formData
+    }).then(function (response) {
+        return response.json();
+    }).then(function (data) {
+        console.log(data)
+        if (data['success'] == true) {
+            store();
+            location.href = "./feed.html"
+        }
+        else alert("login error")
+    });
+}
+loginBtn.addEventListener("click", login)
