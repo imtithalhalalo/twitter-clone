@@ -424,7 +424,11 @@ select {
 .tweet i {
   color: #797979;
 }
-
+.tweet-profile {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
 .user-details {
   font-weight: 700;
   font-size: 14px;
@@ -523,6 +527,10 @@ select {
   height: 118px;
   margin-top: -7%;
   border: 3px solid #fff;
+}
+.like {
+  width: 18px;
+  height: 18px;
 }
 
 .user-info {
