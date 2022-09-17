@@ -5,7 +5,7 @@ header('Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorizatio
 
 include("connection/connection.php");
 $user_id =$_POST["user_id"];
-$query = $mysqli->prepare("SELECT * FROM tweets WHERE user_id=?");
+$query = $mysqli->prepare("SELECT * FROM users,tweets WHERE users.id=tweets.user_id AND tweets.user_id=?");
 $query->bind_param('i',$user_id);
 $query->execute();
 $array = $query->get_result();
