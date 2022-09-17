@@ -42,6 +42,8 @@ const getUsers=(e)=>{
 
 
 
+
+
             console.log(image)
             console.log(followDiv)
            });
