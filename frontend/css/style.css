@@ -607,6 +607,43 @@ select {
   border-radius: 50%;
   background-color: #56595c;
 }
+
+/* Follow */
+.who-to-follow {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  max-width: 300px;
+  border-radius: 15px;
+  background-color: #f7f9f9;
+  margin-top: 16px;
+}
+.follow-profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 70px;
+  margin-top: 4px;
+  padding: 10px;
+}
+
+.follow-profile .account {
+  margin-left: 10px;
+}
+.who-to-follow h1{
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 24px;
+  padding: 8px 15px;
+}
+
+.who-to-follow .tweet-button{
+  background-color: #000;
+  width: 30%;
+  height: 30px;
+  font-size: 12px;
+}
 /* Media Query */
 @media only screen and (max-width: 1260px) {
   .popup {
