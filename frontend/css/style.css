@@ -399,12 +399,12 @@ select {
   margin: 0;
   font-weight: 400;
   font-size: 14px;
-  background-color: #8ecdf8;
-}
-.tweet-action .tweet-button .clicked {
   background-color: #1da1f2;
 }
 
+.tweet-action .tweet-button:hover {
+  background-color: #0065a4e6;
+}
 .tweet {
   display: flex;
   width: 100%;
