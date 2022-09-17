@@ -494,7 +494,18 @@ select {
   font-size: 0.7rem;
   font-weight: 700;
 }
-
+.following-button {
+  background-color: #fff;
+  border: 1px solid #bcbcbc;
+  width: 35%;
+  height: 30px;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 30px;
+  margin-right: 4%;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
 .edit-button:hover {
   background-color: #e7e7e8;
 }
