@@ -19,12 +19,11 @@ const openPopupSignIn = () => {
 }
 
 open_sign_up.addEventListener('click', openPopupSignUp)
-open_sign_in .addEventListener('click', openPopupSignIn)
-console.log('Hi')
+open_sign_in.addEventListener('click', openPopupSignIn)
 
 const closePopupSignUp = () => {
-        popup_sign_up.classList.remove('open-popup')
-        container.classList.remove('grey-fade-over')
+    popup_sign_up.classList.remove('open-popup')
+    container.classList.remove('grey-fade-over')
 }
 
 const closePopupSignIn = () => {
@@ -33,3 +32,60 @@ const closePopupSignIn = () => {
 }
 close_sign_up.addEventListener('click', closePopupSignUp)
 close_sign_in.addEventListener('click', closePopupSignIn)
+
+
+//SignUp
+const createBtn = document.getElementById("close");
+const fullname = document.getElementById("name");
+const password = document.getElementById("password");
+const email = document.getElementById("email");
+const success = document.getElementById("success");
+const genderSelect = document.querySelectorAll('input[name="gender"]');
+let gender;
+
+
+const getGender = () => {
+    for (i = 0; i < genderSelect.length; i++) {
+        if (genderSelect[i].checked) {
+            gender = genderSelect[i];
+        }
+    }
+}
+
+const createdSuccessfully = () => {
+    success.style.color = "#4bb543";
+    success.innerText = "Account Created!"
+};
+
+const failedToCreate = () => {
+    success.style.color = "#FC100D";
+    success.innerText = "Retry please!"
+};
+const signUp = (e) => {
+    getGender();
+    e.preventDefault();
+    let formData = new FormData();
+    formData.append("name", fullname.value);
+    formData.append("password", password.value);
+    formData.append("email", email.value);
+    formData.append("month", month_box.value);
+    formData.append("date", days_box.value);
+    formData.append("year", years_box.value);
+    formData.append("gender", gender.value);
+    fetch(`http://localhost/twitter-clone/backend/signup.php `, {
+        method: 'POST',
+        body: formData
+    }).then(function (response) {
+        return response.json();
+    }).then(function (data) {
+        console.log(data)
+        console.log('Hi')
+        if (data['success'] == true) {
+            popup_sign_up.classList.remove('open-popup')
+            container.classList.remove('grey-fade-over')
+        }
+        else alert("sign up error")
+    });
+    
+}
+createBtn.addEventListener("click", signUp);
