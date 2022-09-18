@@ -42,7 +42,7 @@ const getUsers=(e)=>{
             block.innerText="Block"
             block.classList.add("block")
             followProfile.appendChild(block)
-            
+
             button.addEventListener("click", addFollow=()=>{
                 if(button.innerText=="Follow"){
                     let formData = new FormData();
@@ -78,6 +78,42 @@ const getUsers=(e)=>{
                         else alert("Error")
                     });
                 }
+               
+            });
+
+            block.addEventListener("click", blockUser=()=>{
+                // if(block.innerText=="Follow"){
+                    let formData = new FormData();
+                    formData.append("blocker_id", localStorage.getItem('user_id'));
+                    formData.append("blocking_id", user.id);
+                    fetch(`http://localhost/twitter-clone/backend/block.php `, {
+                        method: 'POST',
+                        body: formData
+                    }).then(function (response) {
+                        return response.json();
+                    }).then(function (data) {
+                        if (data['success'] == true) {
+                        block.innerText="Blocked";
+                        }
+                        else alert("Error")
+                    });
+                // }else if(button.innerText=="Following"){
+                //     formData.append("follower_id",localStorage.getItem('user_id'));
+                //     formData.append("following_id", user.id);
+                //     fetch(`http://localhost/twitter-clone/backend/unfollow.php `, {
+                //         method: 'POST',
+                //         body: formData
+                //     }).then(function (response) {
+                //         return response.json();
+                //     }).then(function (data) {
+                //         if (data['success'] == true) {
+                //         button.innerText="Follow";
+                //         button.classList.remove("following-button");
+                //         button.classList.add("tweet-button");
+                //         }
+                //         else alert("Error")
+                //     });
+                // }
                
             });
 

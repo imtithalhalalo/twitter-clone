@@ -666,6 +666,7 @@ select {
   border: 1px solid #bcbcbc;
   margin-top: 16px;
   font-weight:600;
+  padding: 4px 4px;
   margin-right: 4px;
 }
 
