@@ -56,7 +56,8 @@ const getUserInfo = (e) => {
                 account_username.innerHTML = "@" + user.username
                 date.innerHTML = user.created_at
                 ///////////////////////////////////
-                const url_profile = '../frontend/images/profile.png';
+                const url_profile = user.profile;
+               
                 const image_profile = new Image();
                 image_profile.src = url_profile;
                 image_profile.classList.add("profile-img");

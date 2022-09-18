@@ -10,29 +10,29 @@ $name = $_POST["name"];
 $day=$_POST["day"];
 $month=$_POST["month"];
 $year=$_POST["year"];
-$profile_base64=$_POST["base64Profile"];
-$cover_base64=$_POST["base64Cover"];
+$base64Profile=$_POST["base64Profile"];
+$base64Cover=$_POST["base64Cover"];
 
 $birthdate=$year.'-'.$month.'-'.$day;
 
-    $file_path="http::/localhost/twitter-clone/frontend/images/profiles";
-    $image_parts = explode(";base64,", $profile_base64);
-    $image_type_aux = explode("image/", $image_parts[0]);
-    $image_type = $image_type_aux[1];
-    $image_base64 = base64_decode($image_parts[1]);
-    $file =  $file_path. uniqid() .$image_type ;
-    move_uploaded_file($file, $image_base64);
+    $file_pathh="C:/xampp/htdocs/twitter-clone/frontend/images/covers/";
+    $image_partss = explode(";base64,", $base64Profile);
+    $image_type_auxx = explode("image/", $image_parts[0]);
+    $image_typee = $image_type_auxx[1];
+    $profile_base64 = base64_decode($image_partss[1]);
+    $fileprofile =  $file_pathh. uniqid() .$image_typee ;
+    file_put_contents($fileprofile, $profile_base64);
 
-    $file_path="http::/localhost/twitter-clone/frontend/images/covers";
-    $image_parts = explode(";base64,", $cover_base64);
+    $file_path="C:/xampp/htdocs/twitter-clone/frontend/images/profiles/";
+    $image_parts = explode(";base64,", $base64Cover);
     $image_type_aux = explode("image/", $image_parts[0]);
     $image_type = $image_type_aux[1];
-    $image_base64 = base64_decode($image_parts[1]);
-    $file =  $file_path. uniqid() .$image_type ;
-    move_uploaded_file($file, $image_base64);
+    $cover_base64 = base64_decode($image_parts[1]);
+    $filecover =  $file_path. uniqid() .".png" ;
+    file_put_contents($filecover, $cover_base64);
 
     $query = $mysqli->prepare("UPDATE users SET name=?,birthdate=?,profile=?,cover=? WHERE id=?");
-    $query->bind_param("ssssi", $name,$birthdate,$profile,$cover, $user_id);
+    $query->bind_param("ssssi", $name,$birthdate,$fileprofile,$filecover, $user_id);
     $query->execute();
     
 
