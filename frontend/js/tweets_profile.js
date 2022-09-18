@@ -68,6 +68,26 @@ const getTweetsByUser = (e) => {
                 
                 tweet_div.appendChild(tweet_details);
 
+                countLike=()=>{
+                    let formData = new FormData();
+                    formData.append("tweet_id",tweeter.id);
+                    console.log(tweeter.id)
+                    fetch(`http://localhost/twitter-clone/backend/count_likes.php `, {
+                        method: 'POST',
+                        body: formData
+                    }).then(function (response) {
+                        return response.json();
+                    }).then(function (data) {
+                        if (data.length>0) {
+                            num.innerText = data[0].num
+                        
+                        }
+                        else alert("Error")
+                    });
+
+                };
+                countLike();
+
                 //Image Like
                 const url_like = '../frontend/images/heart.png';
                 const image_like = new Image();

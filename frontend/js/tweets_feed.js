@@ -62,8 +62,8 @@ const getTweetsByUser = (e) => {
                 const tweet_fav = document.createElement("div");
                 tweet_fav.classList.add('tweet-fav')
 
-                const num = document.createElement("span")
-                num.innerText = 0
+                let num = document.createElement("span")
+                // num.innerText = 0
 
                 
                 tweet_div.appendChild(tweet_details);
@@ -91,16 +91,36 @@ const getTweetsByUser = (e) => {
                         if (data['success'] == true) {
                             image_like.src="../frontend/images/heart_filled.jpeg";
                             image_like.classList.add("like");
+                            num+=1;
                         }
                         else alert("Error")
                     });
 
                 });
+                countLike=()=>{
+                    let formData = new FormData();
+                    formData.append("tweet_id",tweeter.id);
+                    console.log(tweeter.id)
+                    fetch(`http://localhost/twitter-clone/backend/count_likes.php `, {
+                        method: 'POST',
+                        body: formData
+                    }).then(function (response) {
+                        return response.json();
+                    }).then(function (data) {
+                        if (data.length>0) {
+                            num.innerText = data[0].num
+                            console.log(data)
+                        
+                        }
+                        else alert("Error")
+                    });
 
+                };
+                countLike();
             });
 
         }
-        else alert("No tweets found")
+        else tweet_profile.innerHTML="<p>You have no tweets on your timeline</p>"
     });
 }
 

@@ -54,15 +54,25 @@ save.addEventListener('click', editProfile = (e) => {
     });
 })
 
-function encodeImage(e) {
+function encodeImageProfile(e) {
     e.preventDefault();
     let file = this.files[0];
     let reader = new FileReader();
     reader.onloadend = function() {
-       base64String= reader.result;
+        base64Profile= reader.result;
     }
     reader.readAsDataURL(file);
 
   }
-  cover_input.addEventListener("change",encodeImage)
-  profile_input.addEventListener("change",encodeImage)
+  function encodeImageCover(e) {
+    e.preventDefault();
+    let file = this.files[0];
+    let reader = new FileReader();
+    reader.onloadend = function() {
+      base64Cover= reader.result;
+    }
+    reader.readAsDataURL(file);
+
+  }
+  cover_input.addEventListener("change",encodeImageCover)
+  profile_input.addEventListener("change",encodeImageProfile)
