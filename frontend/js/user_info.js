@@ -1,6 +1,6 @@
 const user_info = document.querySelector('.user-info')
 const main_account = document.querySelector('.main-account')
-
+const bar = document.querySelector('.bar')
 const getUserInfo = (e) => {
     e.preventDefault();
 
@@ -77,6 +77,10 @@ const getUserInfo = (e) => {
                 account1.appendChild(account1_name)
                 account1.appendChild(account1_username)
 
+                ///////////////////////////////////////////
+                const span = document.createElement("span")
+                bar.appendChild(span)
+                span.innerText = user.name
 
             });
 
