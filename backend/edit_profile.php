@@ -15,15 +15,15 @@ $base64Cover=$_POST["base64Cover"];
 
 $birthdate=$year.'-'.$month.'-'.$day;
 
-    $file_pathh="C:/xampp/htdocs/twitter-clone/frontend/images/covers/";
+    $file_pathh="./frontend/images/profiles/";
     $image_partss = explode(";base64,", $base64Profile);
     $image_type_auxx = explode("image/", $image_parts[0]);
     $image_typee = $image_type_auxx[1];
     $profile_base64 = base64_decode($image_partss[1]);
-    $fileprofile =  $file_pathh. uniqid() .$image_typee ;
+    $fileprofile =  $file_pathh. uniqid() .".png";
     file_put_contents($fileprofile, $profile_base64);
 
-    $file_path="C:/xampp/htdocs/twitter-clone/frontend/images/profiles/";
+    $file_path="./frontend/images/covers/";
     $image_parts = explode(";base64,", $base64Cover);
     $image_type_aux = explode("image/", $image_parts[0]);
     $image_type = $image_type_aux[1];

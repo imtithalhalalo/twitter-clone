@@ -5,7 +5,6 @@ const open_search = this.document.getElementById('open-search')
 const close_search = this.document.getElementById('close-search')
 
 const searching = this.document.getElementById('searching')
-console.log(searching)
 const searchDiv = document.querySelector("#search-users");
 
 const openPopupSearch = (e) => {
