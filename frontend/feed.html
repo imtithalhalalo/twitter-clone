@@ -31,11 +31,9 @@
           <span>Profile</span>
         </a>
 
-        <button class="tweet-button">Tweet</button>
+        <button class="tweet-button" id="open-tweet">Tweet</button>
       </div>
-      <div class="main-account">
-        
-      </div>
+      <div class="main-account"></div>
     </section>
     <!-- End Navigation Bar Column -->
 
@@ -76,7 +74,7 @@
                     />
                   </label>
 
-                  <input id="file-input" type="file" name="file" />
+                  <input id="file-input" type="file" />
                 </div>
                 <button class="tweet-button" id="addTweet-btn">Tweet</button>
               </div>
@@ -88,7 +86,7 @@
         <div class="search-feed">
           <div class="search">
             <i class="fa fa-search" id="open-search"></i>
-            <input type="text" placeholder="Search Twitter" id="searching"/>
+            <input type="text" placeholder="Search Twitter" id="searching" />
           </div>
           <div class="who-to-follow">
             <h1>Who to Follow</h1>
@@ -106,10 +104,38 @@
         <h1>Result</h1>
       </div>
     </section>
+
+    <section class="popup popup-search" id="pop-tweet">
+      <button class="close-btn" id="close-tweet">
+        <i class="fa fa-times fa-2x" aria-hidden="true"></i>
+      </button>
+      <div class="new-tweet">
+        <img class="profile-img" src="../frontend/images/profile.png" alt="" />
+        <div class="new-details">
+          <input type="text" placeholder="What's happening?" id="tweet-text" />
+          <div class="tweet-action">
+            <div class="image-upload">
+              <label for="file-input">
+                <img
+                  src="../frontend/images/upload-img.png"
+                  alt=""
+                  width="18px"
+                  height="18px"
+                />
+              </label>
+
+              <input id="file-input" type="file" />
+            </div>
+            <button class="tweet-button" id="addTweet-btn">Tweet</button>
+          </div>
+        </div>
+      </div>
+    </section>
     <script src="js/feed.js"></script>
     <script src="js/users.js"></script>
     <script src="../frontend/js/tweets_feed.js"></script>
     <script src="../frontend/js/search.js"></script>
     <script src="../frontend/js/user_info_feed.js"></script>
+    <script src="../frontend/js/new_tweet.js"></script>
   </body>
 </html>
