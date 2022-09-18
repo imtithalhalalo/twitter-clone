@@ -13,7 +13,7 @@ $query = $mysqli->prepare("INSERT INTO tweets(text,user_id) VALUE (?, ?)");
 $query->bind_param("si", $text, $user_id);
 $query->execute();
 $tweetid=1;
-    $file_path="../frontend/images";
+    $file_path="http::/localhost/twitter-clone/frontend/images/tweets";
     $image_parts = explode(";base64,", $image_base64);
     $image_type_aux = explode("image/", $image_parts[0]);
     $image_type = $image_type_aux[1];
@@ -27,7 +27,7 @@ $tweetid=1;
     $query->bind_param("sii", $file,$tweetid, $user_id);
     $query->execute();
 
-$response = [];
+    $response = [];
 $response["success"] = true;
 
 echo json_encode($response);
