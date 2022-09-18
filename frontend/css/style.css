@@ -658,12 +658,27 @@ select {
   line-height: 24px;
   padding: 8px 15px;
 }
-
-.who-to-follow .tweet-button{
-  background-color: #000;
+.who-to-follow .block {
   width: 30%;
   height: 30px;
+  border-radius: 15px;
+  background-color: transparent;
+  border: 1px solid #bcbcbc;
+  margin-top: 16px;
+  font-weight:600;
+  margin-right: 4px;
+}
+
+.who-to-follow .block:hover {
+  background-color: #fde8e8;
+  border: 1px solid #bcbcbc;
+}
+.who-to-follow .tweet-button{
+  background-color: #000;
+  width: 40%;
+  height: 30px;
   font-size: 12px;
+  margin-right: 5px;
 }
 /* Media Query */
 @media only screen and (max-width: 800px) {

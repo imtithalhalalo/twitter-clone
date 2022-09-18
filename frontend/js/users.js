@@ -17,6 +17,7 @@ const getUsers=(e)=>{
             const nameSpan=document.createElement("span");
             const usernameSpan=document.createElement("span");
             const button=document.createElement("button");
+            const block=document.createElement("button");
 
             const url = '../frontend/images/profile.png';
             const image = new Image();
@@ -37,6 +38,11 @@ const getUsers=(e)=>{
             button.innerText="Follow"
             button.classList.add("tweet-button")
             followProfile.appendChild(button)
+
+            block.innerText="Block"
+            block.classList.add("block")
+            followProfile.appendChild(block)
+            
             button.addEventListener("click", addFollow=()=>{
                 if(button.innerText=="Follow"){
                     let formData = new FormData();
