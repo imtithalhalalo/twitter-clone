@@ -120,7 +120,7 @@ const getTweetsByUser = (e) => {
             });
 
         }
-        else alert("No tweets found")
+        else tweet_profile.innerHTML="<p>You have no tweets on your timeline</p>"
     });
 }
 
