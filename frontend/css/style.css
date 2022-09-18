@@ -265,9 +265,9 @@ select {
   background-color: #1a8cd8;
 }
 .main-account {
-  width: 100%;
   height: 65%;
   padding-top: 300px;
+  max-width: 100%;
 }
 .account-details {
   display: flex;
@@ -761,6 +761,9 @@ select {
     display: none;
     width: 0;
     padding: 0;
+  }
+  .main-account {
+    display: none;
   }
 }
 
