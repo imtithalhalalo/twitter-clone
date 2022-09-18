@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 include("connection/connection.php");
 $user_id =$_POST["user_id"];
-$query = $mysqli->prepare("SELECT * FROM tweets,users,follows WHERE tweets.user_id=follows.following_id AND users.id=tweets.user_id AND follows.follower_id=?");
+$query = $mysqli->prepare("SELECT tweets.id,users.name,users.username,tweets.text FROM tweets,users,follows WHERE users.id=follows.following_id AND follows.following_id=tweets.user_id AND follows.follower_id=?");
 $query->bind_param('i',$user_id);
 $query->execute();
 $array = $query->get_result();
