@@ -1,0 +1,64 @@
+const user_info = document.querySelector('.user-info')
+
+const getUserInfo = (e) => {
+    e.preventDefault();
+
+    let formData = new FormData();
+    formData.append("user_id", localStorage.getItem('user_id'));
+    fetch(`http://localhost/twitter-clone/backend/user_info.php`, {
+        method: 'POST',
+        body: formData
+    }).then(function (response) {
+        return response.json();
+    }).then(function (data) {
+        if (data.length > 0) {
+            data.forEach(user => {
+
+                const account = document.createElement("div");
+                const date_created = document.createElement("div")
+                const follow_details = document.createElement("div")
+
+                user_info.appendChild(account)
+                user_info.appendChild(date_created)
+                user_info.appendChild(follow_details)
+
+                account.classList.add('account')
+                date_created.classList.add('date-created')
+                follow_details.classList.add('follow-details')
+
+                const account_name = document.createElement('div')
+                const account_username = document.createElement('div')
+
+                account_name.classList.add('account-name')
+                account_username.classList.add('account-username')
+
+                account.appendChild(account_name)
+                account.appendChild(account_username)
+
+                const url = '../frontend/images/calendar.png';
+                const image = new Image();
+                image.src = url;
+                image.classList.add("calendar");
+                date_created.appendChild(image);
+
+                const date_joined = document.createElement('div')
+                const date = document.createElement('span')
+
+                date_joined.classList.add('date-joined')
+                date.classList.add('date')
+
+                date_joined.appendChild(date)
+                date_created.appendChild(date_joined)
+                /////////////////////////////////////////////
+                console.log(user.name)
+                account_name.innerHTML = user.name
+                account_username.innerHTML = user.username
+                date.innerHTML = user.created_at
+
+            });
+
+        }
+        else alert("No tweets found")
+    });
+}
+window.addEventListener("load", getUserInfo);
