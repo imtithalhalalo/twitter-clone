@@ -17,7 +17,7 @@ const addTweet=()=>{
         if (data['success'] == true) {
            console.log(data); 
         }
-        else alert("Adding tweet error error")
+        else alert("Adding tweet error ")
     });
 
 }
