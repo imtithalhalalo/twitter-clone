@@ -38,24 +38,40 @@ const getUsers=(e)=>{
             button.classList.add("tweet-button")
             followProfile.appendChild(button)
             button.addEventListener("click", addFollow=()=>{
-                
-                let formData = new FormData();
-                formData.append("follower_id",localStorage.getItem('user_id'));
-                formData.append("following_id", user.id);
-                fetch(`http://localhost/twitter-clone/backend/add_follow.php `, {
-                    method: 'POST',
-                    body: formData
-                }).then(function (response) {
-                    return response.json();
-                }).then(function (data) {
-                    if (data['success'] == true) {
-                      button.innerText="Following";
-                      button.classList.remove("tweet-button");
-                      button.classList.add("following-button");
-                    }
-                    else alert("Error")
-                });
-
+                if(button.innerText=="Follow"){
+                    let formData = new FormData();
+                    formData.append("follower_id",localStorage.getItem('user_id'));
+                    formData.append("following_id", user.id);
+                    fetch(`http://localhost/twitter-clone/backend/add_follow.php `, {
+                        method: 'POST',
+                        body: formData
+                    }).then(function (response) {
+                        return response.json();
+                    }).then(function (data) {
+                        if (data['success'] == true) {
+                        button.innerText="Following";
+                        button.classList.remove("tweet-button");
+                        button.classList.add("following-button");
+                        }
+                        else alert("Error")
+                    });
+                }else if(button.innerText=="Following"){
+                    formData.append("follower_id",localStorage.getItem('user_id'));
+                    formData.append("following_id", user.id);
+                    fetch(`http://localhost/twitter-clone/backend/unfollow.php `, {
+                        method: 'POST',
+                        body: formData
+                    }).then(function (response) {
+                        return response.json();
+                    }).then(function (data) {
+                        if (data['success'] == true) {
+                        button.innerText="Follow";
+                        button.classList.remove("following-button");
+                        button.classList.add("tweet-button");
+                        }
+                        else alert("Error")
+                    });
+                }
                
             });
 
