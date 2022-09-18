@@ -77,6 +77,26 @@ const getTweetsByUser = (e) => {
                 tweet_fav.appendChild(num);
                 tweet_details.appendChild(tweet_fav)
 
+                //fetch like api
+                image_like.addEventListener("click",like=()=>{
+                    let formData = new FormData();
+                    formData.append("user_id",localStorage.getItem('user_id'));
+                    formData.append("tweet_id",tweeter.id);
+                    fetch(`http://localhost/twitter-clone/backend/like_tweet.php `, {
+                        method: 'POST',
+                        body: formData
+                    }).then(function (response) {
+                        return response.json();
+                    }).then(function (data) {
+                        if (data['success'] == true) {
+                            image_like.src="../frontend/images/heart_filled.jpeg";
+                            image_like.classList.add("like");
+                        }
+                        else alert("Error")
+                    });
+
+                });
+
             });
 
         }
